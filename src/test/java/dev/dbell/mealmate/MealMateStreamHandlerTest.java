@@ -5,11 +5,11 @@ import com.amazonaws.services.lambda.runtime.CognitoIdentity;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.collect.ImmutableList;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.io.Resources;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -18,7 +18,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 
 class MealMateStreamHandlerTest {
     private final ObjectMapper MAPPER = new ObjectMapper(new JsonFactory());
@@ -40,7 +39,10 @@ class MealMateStreamHandlerTest {
         h.handleRequest(input, output, getContext());
 
         // pretty print
-        final String prettyOutput = MAPPER.readTree(output.toString()).toPrettyString();
+        // user agent doesn't appear to be straightforward to force, so we edit it afterwards :shrug:
+        final JsonNode json = MAPPER.readTree(output.toString());
+        ((ObjectNode)json).put("userAgent", "unset");
+        final String prettyOutput = json.toPrettyString();
 
         // compare
         String desiredOutput = Resources.toString(Resources.getResource(String.format("outputs/%s.json", example)), StandardCharsets.UTF_8);

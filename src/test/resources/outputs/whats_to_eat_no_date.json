@@ -1,7 +1,7 @@
 {
   "version" : "1.0",
   "sessionAttributes" : { },
-  "userAgent" : "ask-java/2.42.0 Java/17.0.1 templateResolver",
+  "userAgent" : "unset",
   "response" : {
     "outputSpeech" : {
       "type" : "SSML",
