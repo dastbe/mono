@@ -5,16 +5,19 @@ import com.amazon.ask.dispatcher.request.handler.impl.IntentRequestHandler;
 import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
 import dev.dbell.mealmate.models.Meals;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.ZonedDateTime;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
 @Slf4j
 public class WhatsForXHandler implements IntentRequestHandler {
+
     @Override
     public boolean canHandle(HandlerInput input, IntentRequest intentRequest) {
         return input.matches(intentName("WhatsForXIntent"));
@@ -27,7 +30,7 @@ public class WhatsForXHandler implements IntentRequestHandler {
                 .get("Meal")
                 .getValue();
 
-        ZonedDateTime lookupDate = ZonedDateTime.now();
+        ZonedDateTime lookupDate = intentRequest.getTimestamp().toZonedDateTime();
         Map<String, Meals> meals = Meals.loadAll();
         final String lookupKey = String.format("%s-%s-%s", lookupDate.getYear(), lookupDate.getMonth().getValue(), lookupDate.getDayOfMonth());
         log.info("Searching lookupKey={}", lookupKey);

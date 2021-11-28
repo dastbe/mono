@@ -6,16 +6,19 @@ import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
 import com.amazon.ask.model.Slot;
 import dev.dbell.mealmate.models.Meals;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.ZonedDateTime;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
 @Slf4j
 public class WhatsToEatHandler implements IntentRequestHandler {
+
     @Override
     public boolean canHandle(HandlerInput input, IntentRequest intentRequest) {
         return input.matches(intentName("WhatsToEatIntent"));
@@ -29,7 +32,7 @@ public class WhatsToEatHandler implements IntentRequestHandler {
 
         final String date = s.getValue() == null ? "today" : s.getValue();
 
-        ZonedDateTime lookupDate = ZonedDateTime.now();
+        ZonedDateTime lookupDate = intentRequest.getTimestamp().toZonedDateTime();
         if (date.equalsIgnoreCase("yesterday")) {
             lookupDate = lookupDate.minusDays(1);
         } else if (date.equalsIgnoreCase("tomorrow")) {

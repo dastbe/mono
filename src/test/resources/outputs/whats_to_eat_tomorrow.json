@@ -1,0 +1,17 @@
+{
+  "version" : "1.0",
+  "sessionAttributes" : { },
+  "userAgent" : "ask-java/2.42.0 Java/17.0.1 templateResolver",
+  "response" : {
+    "outputSpeech" : {
+      "type" : "SSML",
+      "ssml" : "<speak>tomorrow for breakfast you will have oatmeal, for lunch you will have half of a turkey sandwich, and for dinner you will have a hamburger</speak>"
+    },
+    "card" : {
+      "type" : "Simple",
+      "title" : "Meal Mate",
+      "content" : "tomorrow for breakfast you will have oatmeal, for lunch you will have half of a turkey sandwich, and for dinner you will have a hamburger"
+    },
+    "shouldEndSession" : true
+  }
+}

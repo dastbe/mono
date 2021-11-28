@@ -1,0 +1,12 @@
+{
+  "version" : "1.0",
+  "sessionAttributes" : { },
+  "userAgent" : "ask-java/2.42.0 Java/17.0.1 templateResolver",
+  "response" : {
+    "outputSpeech" : {
+      "type" : "SSML",
+      "ssml" : "<speak>Sorry, I don't have any meals for today</speak>"
+    },
+    "shouldEndSession" : true
+  }
+}
