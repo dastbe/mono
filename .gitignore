@@ -1,9 +1,9 @@
-# Gradle
-.gradle
-gradle/
-gradlew
-gradlew.bat
-/build/
+# Bazel
+/bazel-*
 
 # Intellij
 .idea/
+.ijwb/
+
+# directories under local development
+/rpc

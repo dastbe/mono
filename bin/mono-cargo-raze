@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+cargo-raze --manifest-path=$(dirname "$0")/../source/rust/cargo/Cargo.toml --generate-lockfile

@@ -1,0 +1,99 @@
+"""
+@generated
+cargo-raze crate build file.
+
+DO NOT EDIT! Replaced on runs of cargo-raze
+"""
+
+# buildifier: disable=load
+load("@bazel_skylib//lib:selects.bzl", "selects")
+
+# buildifier: disable=load
+load(
+    "@rules_rust//rust:defs.bzl",
+    "rust_binary",
+    "rust_library",
+    "rust_proc_macro",
+    "rust_test",
+)
+
+package(default_visibility = [
+    # Public for visibility by "@raze__crate__version//" targets.
+    #
+    # Prefer access through "//source/rust/cargo", which limits external
+    # visibility to explicit Cargo.toml dependencies.
+    "//visibility:public",
+])
+
+licenses([
+    "notice",  # MIT from expression "MIT"
+])
+
+# Generated Targets
+
+# Unsupported target "confirm" with type "example" omitted
+
+# Unsupported target "confirm_simple" with type "example" omitted
+
+# Unsupported target "custom_type" with type "example" omitted
+
+# Unsupported target "date" with type "example" omitted
+
+# Unsupported target "date_complete" with type "example" omitted
+
+# Unsupported target "editor" with type "example" omitted
+
+# Unsupported target "empty_render_config" with type "example" omitted
+
+# Unsupported target "enum_select_raw" with type "example" omitted
+
+# Unsupported target "expense_tracker" with type "example" omitted
+
+# Unsupported target "form" with type "example" omitted
+
+# Unsupported target "manual_date_input" with type "example" omitted
+
+# Unsupported target "multiselect" with type "example" omitted
+
+# Unsupported target "password_full_featured" with type "example" omitted
+
+# Unsupported target "password_simple" with type "example" omitted
+
+# Unsupported target "render_config" with type "example" omitted
+
+# Unsupported target "select" with type "example" omitted
+
+# Unsupported target "text_options" with type "example" omitted
+
+# Unsupported target "text_simple" with type "example" omitted
+
+rust_library(
+    name = "inquire",
+    srcs = glob(["**/*.rs"]),
+    crate_features = [
+        "builtin_validators",
+        "crossterm",
+        "default",
+    ],
+    crate_root = "src/lib.rs",
+    data = [],
+    edition = "2018",
+    rustc_flags = [
+        "--cap-lints=allow",
+    ],
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+    version = "0.2.1",
+    # buildifier: leave-alone
+    deps = [
+        "@raze__bitflags__1_3_2//:bitflags",
+        "@raze__crossterm__0_21_0//:crossterm",
+        "@raze__lazy_static__1_4_0//:lazy_static",
+        "@raze__newline_converter__0_2_0//:newline_converter",
+        "@raze__thiserror__1_0_30//:thiserror",
+        "@raze__unicode_segmentation__1_8_0//:unicode_segmentation",
+        "@raze__unicode_width__0_1_9//:unicode_width",
+    ],
+)

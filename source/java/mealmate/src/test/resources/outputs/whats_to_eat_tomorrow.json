@@ -1,0 +1,17 @@
+{
+  "version" : "1.0",
+  "sessionAttributes" : { },
+  "userAgent" : "unset",
+  "response" : {
+    "outputSpeech" : {
+      "type" : "SSML",
+      "ssml" : "<speak>tomorrow for breakfast you will have oatmeal with brown sugar and milk, for lunch you will have half of a grilled ham and cheese sandwich, and for dinner you will have half a grilled cheese sandwich, tomato soup, grapes, crackers, and a peanut butter cookie</speak>"
+    },
+    "card" : {
+      "type" : "Simple",
+      "title" : "Meal Mate",
+      "content" : "tomorrow for breakfast you will have oatmeal with brown sugar and milk, for lunch you will have half of a grilled ham and cheese sandwich, and for dinner you will have half a grilled cheese sandwich, tomato soup, grapes, crackers, and a peanut butter cookie"
+    },
+    "shouldEndSession" : true
+  }
+}

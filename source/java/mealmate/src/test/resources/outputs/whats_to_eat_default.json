@@ -1,0 +1,17 @@
+{
+  "version" : "1.0",
+  "sessionAttributes" : { },
+  "userAgent" : "unset",
+  "response" : {
+    "outputSpeech" : {
+      "type" : "SSML",
+      "ssml" : "<speak>today for breakfast you will have oatmeal, for lunch you will have meatloaf with gravy and a baked potato, and for dinner you will have half of a peanut butter and jelly sandwich</speak>"
+    },
+    "card" : {
+      "type" : "Simple",
+      "title" : "Meal Mate",
+      "content" : "today for breakfast you will have oatmeal, for lunch you will have meatloaf with gravy and a baked potato, and for dinner you will have half of a peanut butter and jelly sandwich"
+    },
+    "shouldEndSession" : true
+  }
+}

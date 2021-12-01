@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+bazel run //source/rust/awscli-pull:cli

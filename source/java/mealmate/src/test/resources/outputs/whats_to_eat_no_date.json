@@ -1,0 +1,12 @@
+{
+  "version" : "1.0",
+  "sessionAttributes" : { },
+  "userAgent" : "unset",
+  "response" : {
+    "outputSpeech" : {
+      "type" : "SSML",
+      "ssml" : "<speak>Sorry, I don't have any meals for today</speak>"
+    },
+    "shouldEndSession" : true
+  }
+}

@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+bazel cquery $* --output starlark --starlark:file=tools/output.bzl # 2>/dev/null
