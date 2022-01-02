@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+for i in {1..3}; do
+   bazel run //source/rust/advent_of_code/2021:problem_${i} # 2&> /dev/null
+done

@@ -5,5 +5,5 @@
 .idea/
 .ijwb/
 
-# directories under local development
-/rpc
+# Node Modules
+/node_modules
