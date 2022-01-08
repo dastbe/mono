@@ -25,8 +25,9 @@ alias(
     name = "jdk",
     actual = select(
         {
-            "//infra/conditions:arm64": "@corretto_jdk17_macos_arm64//:jdk",
-            "//infra/conditions:x86_64": "@corretto_jdk17_macos_x86_64//:jdk",
+            "//infra/conditions:macos_arm64": "@corretto_jdk17_macos_arm64//:jdk",
+            "//infra/conditions:macos_x86_64": "@corretto_jdk17_macos_x86_64//:jdk",
+            "//infra/conditions:linux_x86_64": "@corretto_jdk17_linux_x86_64//:jdk",
         },
         no_match_error = "Could not find a JDK",
     ),

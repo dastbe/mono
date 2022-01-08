@@ -137,14 +137,14 @@ rust_binary(
     ],
 )
 
-rust_binary(
-    name = "problem_16",
-    srcs = ["src/problem_16.rs"],
-    data = ["src/problem_16.input"],
-    deps = [
-      "//source/rust/cargo:itertools",
-    ],
-)
+# rust_binary(
+#     name = "problem_16",
+#     srcs = ["src/problem_16.rs"],
+#     data = ["src/problem_16.input"],
+#     deps = [
+#       "//source/rust/cargo:itertools",
+#     ],
+# )
 
 rust_binary(
     name = "problem_17",

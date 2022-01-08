@@ -55,17 +55,8 @@ http_archive(
     ],
 )
 
-# load("@rules_rust//rust:repositories.bzl", "rust_repositories")
-# rust_repositories(version = "1.56.0", edition = "2018")
-
-load("@rules_rust//rust:repositories.bzl", "rust_repository_set")
-rust_repository_set(
-    name = "rust_darwin_aarch64_cross",
-    exec_triple = "aarch64-apple-darwin",
-    extra_target_triples = ["x86_64-unknown-linux-gnu"],
-    version = "1.56.0",
-    edition = "2018",
-)
+load("@rules_rust//rust:repositories.bzl", "rust_repositories")
+rust_repositories(version = "1.56.0", edition = "2018")
 
 load("//source/rust/cargo:crates.bzl", "raze_fetch_remote_crates")
 raze_fetch_remote_crates()

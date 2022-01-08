@@ -10,13 +10,14 @@ ts_project(
         "@npm//aws-cdk",
         "@npm//aws-cdk-lib",
     ],
+    data = [
+        "//infra/images/example/echo:image.tar",
+    ]
 )
 
 nodejs_binary(
     name = "app",
     data = [
-        ":static/hello.json",
-        "//infra/images/example/echo:image.tar",
         ":lib",
     ],
     entry_point = ":app.ts",

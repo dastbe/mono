@@ -18,7 +18,7 @@ impl Echo for EchoImpl {
         } else {
             req.get_message()
         };
-        println!("message was {}", msg);
+        println!("message received was {}", msg);
         r.set_message("pong".to_string());
         grpc::SingleResponse::completed(r)
     }
